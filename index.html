@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Jan Nathanael Ibarra — Multimedia Graphic Designer. Campaigns, templates, motion, branding and digital work." />
+  <meta name="theme-color" content="#07080b" />
+  <title>Jan Ibarra — Portfolio Showcase</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+  <header class="topbar">
+    <a class="brand" href="#top">JAN IBARRA<span>®</span></a>
+    <div class="status"><i></i> MULTIMEDIA GRAPHIC DESIGNER</div>
+    <nav>
+      <a href="#work">WORK</a><a href="#archive">ARCHIVE</a><a href="#contact">CONTACT</a>
+      <a href="assets/resume/Jan_Nathanael_Ibarra_Resume.pdf" target="_blank" rel="noopener">RESUME ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <p class="eyebrow">PORTFOLIO / SELECTED WORK / 2019—2026</p>
+      <h1>VISUAL<br><span>WORKS.</span></h1>
+      <div class="hero-bottom">
+        <p>Campaign systems, templates, social design, motion, video and digital experiences.</p>
+        <div class="chips"><span>CAMPAIGNS</span><span>TEMPLATES</span><span>MOTION</span><span>WEB</span></div>
+      </div>
+      <a class="scroll" href="#work">BROWSE THE ARCHIVE <b>↓</b></a>
+    </section>
+
+    <section class="shell work" id="work">
+      <div class="section-head"><div><p class="eyebrow">01 / SELECTED WORK</p><h2>PROJECT<br>SHOWCASE.</h2></div><div class="filters" id="filters"></div></div>
+      <div class="project-grid" id="projectGrid"></div>
+      <p class="data-note" id="dataNote" hidden></p>
+    </section>
+
+    <section class="shell archive" id="archive">
+      <div class="section-head compact"><div><p class="eyebrow">02 / VISUAL ARCHIVE</p><h2>MORE<br>WORK.</h2></div><p class="section-copy">Extra graphics, templates, videos and project details pulled from the same project library.</p></div>
+      <div class="archive-grid" id="archiveGrid"></div>
+    </section>
+
+    <section class="shell contact" id="contact">
+      <p class="eyebrow">03 / CONTACT</p>
+      <h2>LET'S MAKE<br><span>SOMETHING GOOD.</span></h2>
+      <a class="email" href="mailto:jan.nathanaelibarra@gmail.com">jan.nathanaelibarra@gmail.com <b>↗</b></a>
+      <div class="contact-links"><a href="https://www.behance.net/JanIbarra" target="_blank" rel="noopener">BEHANCE ↗</a><a href="https://www.linkedin.com/in/vaeldesigns/" target="_blank" rel="noopener">LINKEDIN ↗</a><a href="assets/resume/Jan_Nathanael_Ibarra_Resume.pdf" target="_blank" rel="noopener">RESUME ↗</a></div>
+    </section>
+  </main>
+
+  <footer><span>JAN NATHANAEL IBARRA © 2026</span><span>CAMPAIGN / MULTIMEDIA / DIGITAL DESIGN</span></footer>
+
+  <div class="viewer" id="viewer" aria-hidden="true">
+    <button class="viewer-close" type="button" aria-label="Close project">×</button>
+    <div class="viewer-layout"><div class="viewer-media" id="viewerMedia"></div><aside class="viewer-info"><p class="eyebrow" id="viewerType">SELECTED WORK</p><h3 id="viewerTitle"></h3><p id="viewerCopy"></p><div class="viewer-meta" id="viewerMeta"></div></aside></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="demo-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

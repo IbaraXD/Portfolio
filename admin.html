@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#07080b" />
+  <title>Portfolio Admin — Jan Ibarra</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-body">
+  <div class="ambient" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+  <header class="admin-topbar"><a class="brand" href="index.html">JAN IBARRA<span>®</span></a><div class="admin-top-actions"><a href="index.html" target="_blank">VIEW SITE ↗</a><button id="logoutBtn" type="button" hidden>LOG OUT</button></div></header>
+
+  <main class="admin-shell">
+    <section class="admin-login" id="loginPanel">
+      <p class="eyebrow">PORTFOLIO ADMIN</p><h1>MANAGE<br><span>YOUR WORK.</span></h1>
+      <p>Sign in to add projects and paste public Google Drive links for graphics and videos.</p>
+      <div class="login-form"><label>Email<input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com"></label><label>Password<input id="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••"></label><div class="row"><button class="primary" id="loginBtn" type="button">SIGN IN</button><button class="ghost" id="signupBtn" type="button">CREATE ACCOUNT</button></div><p class="form-status" id="loginStatus"></p></div>
+      <div class="setup-card"><strong>FIRST TIME SETUP</strong><p>Run <code>supabase.sql</code> in Supabase, add your email to <code>portfolio_admin_users</code>, then place your Supabase URL + anon key in <code>config.js</code>.</p></div>
+    </section>
+
+    <section class="admin-app" id="adminApp" hidden>
+      <aside class="admin-sidebar">
+        <div class="sidebar-head"><div><p class="eyebrow">PROJECTS</p><h2>LIBRARY.</h2></div><button class="square" id="newProjectBtn" type="button" title="New project">＋</button></div>
+        <div class="project-list" id="adminProjectList"></div>
+      </aside>
+
+      <section class="editor">
+        <div class="editor-head"><div><p class="eyebrow" id="editorMode">NEW PROJECT</p><h2 id="editorTitle">ADD WORK.</h2></div><div class="row"><button class="ghost danger" id="deleteProjectBtn" type="button" hidden>DELETE</button><button class="primary" id="saveProjectBtn" type="button">SAVE PROJECT</button></div></div>
+
+        <div class="editor-grid">
+          <label>Project title<input id="fieldTitle" type="text" placeholder="W3GG — Monthly Campaign"></label>
+          <label>Client<input id="fieldClient" type="text" placeholder="W3GG"></label>
+          <label>Year<input id="fieldYear" type="text" placeholder="2026"></label>
+          <label>Category<select id="fieldCategory"><option value="campaign">Campaign</option><option value="template">Template</option><option value="motion">Video / Motion</option><option value="branding">Branding</option><option value="web">Web / UI</option></select></label>
+          <label>Card size<select id="fieldSize"><option value="normal">Normal</option><option value="large">Large</option><option value="wide">Wide</option><option value="tall">Tall</option></select></label>
+          <label>Display order<input id="fieldOrder" type="number" min="0" value="0"></label>
+          <label class="span-2">Tags<input id="fieldTags" type="text" placeholder="CAMPAIGN, SOCIAL, VIDEO"></label>
+          <label class="span-2">Description<textarea id="fieldDescription" rows="4" placeholder="Short project description..."></textarea></label>
+          <label class="span-2">Cover image — Google Drive or direct image URL<input id="fieldCover" type="url" placeholder="https://drive.google.com/file/d/.../view"></label>
+          <div class="toggles span-2"><label class="toggle"><input id="fieldFeatured" type="checkbox" checked><span></span> Featured</label><label class="toggle"><input id="fieldPublished" type="checkbox" checked><span></span> Published</label></div>
+        </div>
+
+        <div class="media-editor">
+          <div class="media-head"><div><p class="eyebrow">PROJECT MEDIA</p><h3>GRAPHICS & VIDEOS.</h3></div><button class="ghost" id="addMediaBtn" type="button">+ ADD MEDIA</button></div>
+          <div class="bulk-add"><label>Quick add Google Drive links<textarea id="bulkLinks" rows="4" placeholder="Paste one Drive link per line"></textarea></label><div class="row"><select id="bulkType"><option value="image">Images</option><option value="video">Videos</option></select><button class="ghost" id="bulkAddBtn" type="button">ADD LINKS</button></div></div>
+          <div id="mediaRows" class="media-rows"></div>
+          <p class="form-status" id="saveStatus"></p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <template id="mediaRowTemplate">
+    <div class="media-row">
+      <span class="drag-index">01</span>
+      <select class="media-type"><option value="image">Image</option><option value="video">Video</option></select>
+      <input class="media-url" type="url" placeholder="Google Drive or direct media URL">
+      <input class="media-poster" type="url" placeholder="Optional video poster image URL">
+      <input class="media-caption" type="text" placeholder="Optional caption">
+      <div class="media-actions"><button type="button" class="icon move-up" title="Move up">↑</button><button type="button" class="icon move-down" title="Move down">↓</button><button type="button" class="icon remove" title="Remove">×</button></div>
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
