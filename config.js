@@ -9,8 +9,8 @@
   Never put your Supabase service_role key here.
 */
 window.PORTFOLIO_CONFIG = {
-  supabaseUrl: "",
-  supabaseAnonKey: "",
+  supabaseUrl: "https://sczyvbkrvvmysghnybxs.supabase.co",
+  supabaseAnonKey: "sb_publishable_wdbDNUxvXXYIi3b-P6ElPw_Xs9SFwbB",
   siteName: "Jan Ibarra — Portfolio",
   adminPath: "admin.html"
 };
